@@ -22,7 +22,23 @@ dsh plugin --profile desktop add dsh-rookie-courses
 
 或在 DSH 的 Plugins 页面按包名安装。
 
+npm 上还没有发布时，也可以直接从 GitHub 安装：
+
+```sh
+dsh plugin --profile desktop add git+https://github.com/Jetson7817/dsh-rookie-courses.git
+```
+
 要求 DSH `>=0.2.1-rc.2 <0.3.0`，Node `>=22.19`。
+
+## 插件市场
+
+索引地址：
+
+```text
+https://raw.githubusercontent.com/Jetson7817/dsh-rookie-courses/main/market/index.json
+```
+
+在 DSH 里启用 `@deepseek-ai/dsh-experimental-plugin-market-bundle`，把上面的地址加进 Discover / Settings 的 index 列表即可。
 
 ## 配置课程
 
