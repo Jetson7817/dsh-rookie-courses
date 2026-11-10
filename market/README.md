@@ -1,19 +1,27 @@
-# 插件市场 index（示例）
+# 插件市场索引
 
-这个目录是给 DSH 的 **Discover / 插件市场** 用的索引，不是 npm 包的一部分。
+已发布地址：
 
-## 发布顺序
+```text
+https://jetson7817.github.io/dsh-rookie-courses/market/index.json
+```
 
-1. 把 `index.example.json` 里的 `REPLACE_WITH_YOUR_NAME` 换成你的 GitHub 用户名；
-2. 确认 npm 上已经有对应版本（`0.2.0`）；
-3. 把文件改名为 `index.json`，放到任意 HTTPS 静态地址（GitHub Pages 最省事）；
-4. 用户侧：
-   - 启用可选 bundle `@deepseek-ai/dsh-experimental-plugin-market-bundle`（默认关闭）；
-   - 在 Discover / Settings 里加入你的 `index.json` 地址；
-   - 就能看到「菜鸟课程」并安装。
+- 格式：DSH plugin market index format 1
+- 版本：`0.2.0`
+- 源：`git`，固定到 `Jetson7817/dsh-rookie-courses` 的一个 commit
+- 图标：相对索引地址的 `../icon.png`
 
-索引是**未签名**的：它只是安装入口，最终安装什么由 npm 包自己的 `package.json` 决定。
+## 用户怎么用
 
-## 校验
+1. 启用 `@deepseek-ai/dsh-experimental-plugin-market-bundle`（默认关闭）；
+2. 在 Discover / Settings 里加入上面的索引地址；
+3. 找到「菜鸟课程」并安装。
 
-DSH 自带 format 1 校验器 `@deepseek-ai/dsh-plugin-market-index`，生成后可以先跑 `parseMarketIndex`。
+## 发新版本
+
+1. 改 `package.json` 的 `version`；
+2. 提交并 push；
+3. 把 `market/index.json` 的 `versions[0].version` 和 `source.commit` 改成新提交；
+4. commit + push，等 Pages 重建。
+
+索引不签名：它只是安装入口，最终安装什么由仓库里的 `package.json` 决定。
