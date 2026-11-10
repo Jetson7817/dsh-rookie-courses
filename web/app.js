@@ -172,6 +172,7 @@ function coursePage(course) {
         <p>${esc(course.next.desc || '')}</p>
         <div class="actions">
           <button class="start" type="button" data-start="${esc(course.id)}" id="start">开始上课 <span aria-hidden="true">→</span></button>
+          <button class="ghost" type="button" data-guide="${esc(course.id)}">课程说明</button>
           <span class="hint">自动新建会话 · 切到课堂</span>
         </div>
       </div>
@@ -301,6 +302,7 @@ async function openNote(courseId, file) {
   drawer.hidden = false
   drawerOpen = true
   document.body.style.overflow = 'hidden'
+  $('drawer-kicker').textContent = '课程笔记'
   $('drawer-title').textContent = '载入中…'
   $('drawer-body').innerHTML = '<p style="color:var(--muted)">正在读笔记…</p>'
   try {
@@ -316,7 +318,29 @@ async function openNote(courseId, file) {
   }
 }
 
+async function openGuide(courseId) {
+  const drawer = $('drawer')
+  drawer.hidden = false
+  drawerOpen = true
+  document.body.style.overflow = 'hidden'
+  $('drawer-kicker').textContent = '课程说明'
+  $('drawer-title').textContent = '载入中…'
+  $('drawer-body').innerHTML = '<p style="color:var(--muted)">正在读课程说明…</p>'
+  try {
+    const res = await fetch(`./api/guide?id=${encodeURIComponent(courseId)}`, { headers: { accept: 'application/json' } })
+    const data = await res.json()
+    if (!res.ok || !data.ok) throw new Error(data.error || `HTTP ${res.status}`)
+    $('drawer-title').textContent = data.name || '课程说明'
+    $('drawer-body').innerHTML = renderMarkdown(data.markdown)
+    $('drawer-body').scrollTop = 0
+  } catch (error) {
+    $('drawer-body').innerHTML = `<p style="color:var(--muted)">读不到课程说明：${esc(error.message)}</p>`
+  }
+}
+
 document.addEventListener('click', (event) => {
+  const guide = event.target.closest('[data-guide]')
+  if (guide) { openGuide(guide.dataset.guide); return }
   const note = event.target.closest('[data-note]')
   if (note) { openNote(note.dataset.course, note.dataset.note); return }
   if (event.target.closest('[data-close]')) closeDrawer()

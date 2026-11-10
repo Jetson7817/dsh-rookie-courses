@@ -1,6 +1,6 @@
 {
   "name": "dsh-rookie-courses",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "菜鸟课程：四门课的学习台，选课、看进度、一键开课，右侧常驻课程看板。",
   "type": "module",
   "main": "lib/index.js",
