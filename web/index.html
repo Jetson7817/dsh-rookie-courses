@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN" data-scheme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>菜鸟课程</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="shell" id="shell">
+  <aside class="rail">
+    <a class="brand" href="#/" aria-label="菜鸟课程首页">
+      <span class="brand-mark" aria-hidden="true">菜</span>
+      <span class="brand-text">
+        <b>菜鸟课程</b>
+        <small>dsh-rookie-courses</small>
+      </span>
+    </a>
+    <nav class="nav" id="rail-nav" aria-label="课程导航"></nav>
+    <div class="rail-foot">
+      <span id="rail-summary">四门课</span>
+      <span class="rail-ver">v0.1</span>
+    </div>
+  </aside>
+  <main class="main" id="app">
+    <div class="skeleton">
+      <div class="sk-line short"></div>
+      <div class="sk-title"></div>
+      <div class="sk-title tiny"></div>
+      <div class="sk-grid"><i></i><i></i><i></i><i></i></div>
+    </div>
+  </main>
+</div>
+<div class="drawer" id="drawer" hidden>
+  <div class="drawer-mask" data-close></div>
+  <aside class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+    <header class="drawer-head">
+      <div>
+        <p class="drawer-kicker">课程笔记</p>
+        <h2 id="drawer-title">笔记</h2>
+      </div>
+      <button class="drawer-close" type="button" data-close aria-label="关闭">×</button>
+    </header>
+    <div class="drawer-body markdown" id="drawer-body"></div>
+  </aside>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="./app.js"></script>
+</body>
+</html>

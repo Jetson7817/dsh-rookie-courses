@@ -1,0 +1,61 @@
+{
+  "name": "dsh-rookie-courses",
+  "version": "0.2.0",
+  "description": "菜鸟课程：四门课的学习台，选课、看进度、一键开课，右侧常驻课程看板。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "web",
+    "docs",
+    "cordis.patch.yml",
+    "README.md",
+    "icon.png"
+  ],
+  "engines": {
+    "node": ">=22.19.0",
+    "dsh": ">=0.2.1-rc.2 <0.3.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": []
+    }
+  },
+  "peerDependencies": {
+    "react": "^18.2.0 || ^19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "license": "MIT",
+  "keywords": [
+    "dsh-plugin",
+    "dsh",
+    "deepseek-harness",
+    "courses",
+    "education",
+    "web-ui"
+  ],
+  "icon": "./icon.png",
+  "author": "Jetson7817",
+  "homepage": "https://github.com/Jetson7817/dsh-rookie-courses",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jetson7817/dsh-rookie-courses.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jetson7817/dsh-rookie-courses/issues"
+  }
+}

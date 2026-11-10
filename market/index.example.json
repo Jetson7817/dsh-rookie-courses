@@ -1,0 +1,71 @@
+{
+  "format": 1,
+  "title": {
+    "en": "Rookie Courses",
+    "zh": "菜鸟课程"
+  },
+  "description": {
+    "en": "A course desk for DSH: pick a course, see progress, start a class.",
+    "zh": "DSH 课程台：选课、看进度、一键开课。"
+  },
+  "metadata": {
+    "categories": {
+      "education": {
+        "title": {
+          "en": "Education",
+          "zh": "教育"
+        }
+      }
+    },
+    "labels": {
+      "web-ui": {
+        "title": {
+          "en": "Web UI",
+          "zh": "界面"
+        }
+      }
+    }
+  },
+  "plugins": [
+    {
+      "name": "dsh-rookie-courses",
+      "title": {
+        "en": "Rookie Courses",
+        "zh": "菜鸟课程"
+      },
+      "description": {
+        "en": "Four-course study desk with progress, notes and one-click class start.",
+        "zh": "四门课的课程台，进度、笔记与一键开课。"
+      },
+      "author": "REPLACE_WITH_YOUR_NAME",
+      "homepage": "https://github.com/REPLACE_WITH_YOUR_NAME/dsh-rookie-courses",
+      "repository": {
+        "url": "https://github.com/REPLACE_WITH_YOUR_NAME/dsh-rookie-courses"
+      },
+      "metadata": {
+        "category": "education",
+        "keywords": [
+          "dsh-plugin",
+          "courses",
+          "education",
+          "web-ui"
+        ],
+        "labels": [
+          "web-ui"
+        ]
+      },
+      "versions": [
+        {
+          "version": "0.2.0",
+          "publishTimestamp": 1794279306,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.1-rc.2 <0.3.0"
+          }
+        }
+      ]
+    }
+  ]
+}

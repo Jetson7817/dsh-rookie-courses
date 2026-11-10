@@ -1,0 +1,5 @@
+node_modules/
+*.tgz
+需求.md
+.DS_Store
+market/index.json
