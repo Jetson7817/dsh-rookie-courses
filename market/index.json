@@ -58,11 +58,11 @@
       "versions": [
         {
           "version": "0.2.0",
-          "publishTimestamp": 1794280888,
+          "publishTimestamp": 1794294498,
           "source": {
             "type": "git",
             "url": "https://github.com/Jetson7817/dsh-rookie-courses",
-            "commit": "c54fb0d70279d20eb2a7f341656c47cefb2478bf"
+            "commit": "fa795121e920d8804746bee8fc972f98ae99df4a"
           },
           "engines": {
             "dsh": ">=0.2.1-rc.2 <0.3.0"
